@@ -99,7 +99,7 @@ export default function Home() {
           />
         
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-        <div className="container mx-auto h-full px-4 md:px-6">
+        <div className="container mx-auto h-full px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="relative z-10 flex h-full max-w-2xl flex-col items-start justify-center text-left">
             
             <Badge variant="secondary" className="mb-4 bg-black/30 backdrop-blur-sm border-primary/30">
@@ -113,13 +113,13 @@ export default function Home() {
             <h1 className="font-headline text-5xl font-bold tracking-tight text-primary glow-text sm:text-6xl md:text-7xl lg:text-8xl" style={{ textShadow: '0 0 15px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--primary) / 0.5)' }}>
               RECAP
             </h1>
-            <p className="mt-2 max-w-4xl text-2xl text-foreground/90 md:text-3xl font-bold" style={{ animationDelay: '0.4s' }}>
+            <p className="mt-2 max-w-4xl text-2xl text-foreground/90 md:text-3xl font-bold">
               Recoverable Capsule for Orbital Debris Collection
             </p>
-            <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-lg" style={{ animationDelay: '0.6s' }}>
+            <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-lg">
               Cleaning Space, Securing Orbits. Advanced autonomous systems for collecting and managing orbital debris to protect critical satellite infrastructure.
             </p>
-            <div className="mt-8 flex flex-wrap justify-start gap-4" style={{ animationDelay: '0.8s' }}>
+            <div className="mt-8 flex flex-wrap justify-start gap-4">
               <Button asChild size="lg" className="glowing-btn">
                 <Link href="/dashboard">Join the Mission <ArrowRight className="ml-2" /></Link>
               </Button>
@@ -139,7 +139,7 @@ export default function Home() {
       </section>
 
       <section id="about" className="py-12 md:py-24">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About RECAP</h2>
@@ -173,7 +173,7 @@ export default function Home() {
       </section>
       
       <section id="technology" className="py-12 md:py-24 bg-secondary/20">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Advanced Technology</h2>
             <p className="mt-4 text-muted-foreground">
@@ -199,7 +199,7 @@ export default function Home() {
       </section>
 
       <section id="mission" className="py-12 md:py-24">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
             <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-8">
                     <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -242,7 +242,7 @@ export default function Home() {
       </section>
       
       <section id="contact" className="py-12 md:py-24 border-t border-border/50">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
             <div className="text-center max-w-4xl mx-auto mb-12">
                 <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                     Get In <span className="text-primary">Touch</span>
