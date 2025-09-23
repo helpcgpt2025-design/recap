@@ -23,16 +23,15 @@ export default function Home() {
   return (
     <>
       <section className="relative h-screen min-h-[700px] w-full overflow-hidden">
-        {heroImage && (
+        
            <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
+            src="/hero-banner.jpg"
+            alt="A satellite collecting orbital debris with Earth in the background."
             fill
             className="object-cover"
-            data-ai-hint={heroImage.imageHint}
             priority
           />
-        )}
+        
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/50 to-transparent" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
           
@@ -58,7 +57,7 @@ export default function Home() {
               <Link href="#">Join the Mission <ArrowRight className="ml-2" /></Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="bg-black/30 backdrop-blur-sm">
-              <Link href="#mission"><PlayCircle className="mr-2"/> Watch Demo</Link>
+              <Link href="#"><PlayCircle className="mr-2"/> Watch Demo</Link>
             </Button>
           </div>
 
