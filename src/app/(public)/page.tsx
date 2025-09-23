@@ -211,8 +211,11 @@ export default function Home() {
                     <ul className="space-y-6">
                         {missionGoals.map((goal, index) => (
                            <li key={goal.title} className="flex items-start gap-4">
-                               <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 border border-primary/30">
-                                 <div className={`h-4 w-4 rounded-full ${index === 0 ? 'bg-primary' : 'bg-primary/50'}`} />
+                               <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 border border-primary/30 flex-shrink-0">
+                                   <div className="relative flex h-3 w-3">
+                                        <div className={`animate-ping absolute inline-flex h-full w-full rounded-full ${index === 0 ? 'bg-primary/75' : 'bg-primary/50'} opacity-75`}></div>
+                                        <div className={`relative inline-flex rounded-full h-3 w-3 ${index === 0 ? 'bg-primary' : 'bg-primary/50'}`}></div>
+                                   </div>
                                </div>
                                <div>
                                    <h3 className="font-headline text-xl font-bold">{goal.title}</h3>
