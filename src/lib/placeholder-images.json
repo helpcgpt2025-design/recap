@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "A view of Earth from orbit, with swirling clouds and city lights.",
+      "imageUrl": "https://images.unsplash.com/photo-1614121181207-4b6c334d353d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlYXJ0aCUyMG9yYml0fGVufDB8fHx8MTc1ODY0NTQyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "earth orbit"
+    },
+    {
+      "id": "satellite-capsule",
+      "description": "A futuristic satellite capsule for debris collection.",
+      "imageUrl": "https://images.unsplash.com/photo-1548244250-9aa08b58f204?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzYXRlbGxpdGUlMjBjYXBzdWxlfGVufDB8fHx8MTc1ODY0NTQyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "satellite capsule"
+    },
+    {
+      "id": "promo-video-thumbnail",
+      "description": "Thumbnail for a promotional video about the RECAP mission.",
+      "imageUrl": "https://images.unsplash.com/photo-1562575214-da9fcf59b907?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzU4NTkyNDAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "technology abstract"
+    },
+    {
+      "id": "vision-card",
+      "description": "Abstract image representing space vision.",
+      "imageUrl": "https://images.unsplash.com/photo-1708257105880-11cd2deba6e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzcGFjZSUyMHRlbGVzY29wZXxlbnwwfHx8fDE3NTg1OTE5MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "space telescope"
+    },
+    {
+      "id": "technology-card",
+      "description": "Abstract image representing space technology.",
+      "imageUrl": "https://images.unsplash.com/photo-1647427060118-4911c9821b82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyb2JvdGljJTIwYXJtfGVufDB8fHx8MTc1ODU4NTMwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "robotic arm"
+    },
+    {
+      "id": "mission-card",
+      "description": "Abstract image representing the Earth mission.",
+      "imageUrl": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxlYXJ0aCUyMGNvbnRpbmVudHN8ZW58MHx8fHwxNzU4NjQ1NDI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "earth continents"
+    },
+    {
+      "id": "debris-sample-1",
+      "description": "A sample of orbital debris to be classified.",
+      "imageUrl": "https://images.unsplash.com/photo-1585187012199-269f89f2238f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcGFjZSUyMGp1bmt8ZW58MHx8fHwxNzU4NjQ1NDI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "space junk"
+    },
+    {
+      "id": "debris-sample-2",
+      "description": "A second sample of orbital debris to be classified.",
+      "imageUrl": "https://images.unsplash.com/photo-1722163331639-3e8c72f6e94e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzYXRlbGxpdGUlMjBwYXJ0fGVufDB8fHx8MTc1ODY0NTQyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "satellite part"
+    },
+    {
+      "id": "debris-sample-3",
+      "description": "A third sample of orbital debris to be classified.",
+      "imageUrl": "https://picsum.seed/debris3/512/512",
+      "imageHint": "metal fragment"
+    }
+  ]
 }
