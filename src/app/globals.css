@@ -80,4 +80,7 @@
   .glow-text {
     @apply animate-glow;
   }
+  .tech-card:hover {
+    @apply border-primary shadow-primary/20 shadow-lg -translate-y-1;
+  }
 }

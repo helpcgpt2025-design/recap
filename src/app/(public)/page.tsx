@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { PlayCircle, Rocket, Telescope, Wrench, ArrowRight } from "lucide-react";
+import { PlayCircle, Rocket, Telescope, Wrench, ArrowRight, Crosshair, Shield, Globe, Zap, Database } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
@@ -18,6 +18,39 @@ const stats = [
   { value: "500k+", label: "Debris Objects Tracked", animation: "animate-float-1" },
   { value: "99.9%", label: "Mission Success Rate", animation: "animate-float-2" },
   { value: "24/7", label: "Orbital Monitoring", animation: "animate-float-3" },
+];
+
+const technologyFeatures = [
+    {
+        icon: Crosshair,
+        title: "Precision Targeting",
+        description: "Advanced AI algorithms identify and track debris with millimeter precision in real-time.",
+    },
+    {
+        icon: Rocket,
+        title: "Autonomous Recovery",
+        description: "Self-navigating capsules execute complex orbital maneuvers for debris collection missions.",
+    },
+    {
+        icon: Shield,
+        title: "Satellite Protection",
+        description: "Proactive debris removal safeguards critical communication and navigation satellites.",
+    },
+    {
+        icon: Globe,
+        title: "Global Coverage",
+        description: "Comprehensive monitoring and collection across all Earth orbital zones and trajectories.",
+    },
+    {
+        icon: Zap,
+        title: "Real-time Telemetry",
+        description: "Live mission data streaming with instant alerts and comprehensive status monitoring.",
+    },
+    {
+        icon: Database,
+        title: "Mission Analytics",
+        description: "Detailed reports and predictive analytics for future debris mitigation strategies.",
+    },
 ];
 
 export default function Home() {
@@ -48,7 +81,7 @@ export default function Home() {
             <h1 className="font-headline text-5xl font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               RECAP
             </h1>
-            <p className="mt-2 max-w-4xl text-xl text-foreground/90 md:text-2xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <p className="mt-2 max-w-4xl text-xl text-foreground/90 md:text-2xl animate-fade-in-up font-medium" style={{ animationDelay: '0.4s' }}>
               Recoverable Capsule for Orbital Debris Collection
             </p>
             <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-lg animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
@@ -114,26 +147,29 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      
       <section id="technology" className="py-12 md:py-24 bg-secondary/20">
-        <div className="container mx-auto grid items-center gap-8 px-4 md:grid-cols-2 md:px-6">
-          <div className="space-y-4">
-            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Interactive Mission Demo</h2>
-            <p className="text-muted-foreground">
-              Explore our RECAP capsule, the heart of our debris collection system. This 3D model demonstrates the capsule's key features and maneuverability in orbit. Interact with the model to learn more.
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Advanced Technology</h2>
+            <p className="mt-4 text-muted-foreground">
+              Our cutting-edge systems combine AI, autonomous navigation, and precision engineering to deliver unmatched debris collection capabilities.
             </p>
           </div>
-          <div className="flex items-center justify-center">
-             {capsuleImage && (
-                <Image
-                  src={capsuleImage.imageUrl}
-                  alt={capsuleImage.description}
-                  width={400}
-                  height={400}
-                  className="rounded-full object-cover transition-transform duration-500 hover:rotate-[360deg] hover:scale-105"
-                  data-ai-hint={capsuleImage.imageHint}
-                />
-             )}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {technologyFeatures.map((feature) => (
+                <Card key={feature.title} className="tech-card bg-transparent border-primary/20 transition-all">
+                    <CardHeader className="flex flex-col items-start gap-4">
+                        <div className="bg-primary/10 p-3 rounded-lg border border-primary/30">
+                            <feature.icon className="h-8 w-8 text-primary" />
+                        </div>
+                        <CardTitle className="font-headline text-xl">{feature.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">{feature.description}</p>
+                    </CardContent>
+                </Card>
+            ))}
           </div>
         </div>
       </section>
