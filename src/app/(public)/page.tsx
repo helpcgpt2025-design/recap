@@ -110,7 +110,7 @@ export default function Home() {
               Mission Active
             </Badge>
             
-            <h1 className="font-headline text-5xl font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <h1 className="font-headline text-5xl font-bold tracking-tight text-primary glow-text sm:text-6xl md:text-7xl lg:text-8xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               RECAP
             </h1>
             <p className="mt-2 max-w-4xl text-xl text-foreground/90 md:text-2xl animate-fade-in-up font-medium" style={{ animationDelay: '0.4s' }}>
@@ -127,7 +127,7 @@ export default function Home() {
 
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12 w-full max-w-5xl animate-fade-in-up" style={{ animationDelay: '1s' }}>
               {stats.map((stat) => (
-                <div key={stat.label} className={`rounded-lg border border-primary/20 bg-black/30 p-4 text-center backdrop-blur-sm ${stat.animation}`}>
+                <div key={stat.label} className={`rounded-lg border border-primary/20 bg-black/30 p-4 text-center backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1 ${stat.animation}`}>
                   <p className="font-headline text-4xl font-bold text-primary">{stat.value}</p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </div>

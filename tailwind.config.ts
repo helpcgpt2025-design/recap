@@ -89,8 +89,8 @@ export default {
           },
         },
         'glow': {
-          '0%, 100%': { 'text-shadow': '0 0 5px hsl(var(--primary)), 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary))' },
-          '50%': { 'text-shadow': '0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 40px hsl(var(--primary))' },
+          '0%, 100%': { 'text-shadow': '0 0 10px hsl(var(--primary) / 0.5), 0 0 20px hsl(var(--primary) / 0.3)' },
+          '50%': { 'text-shadow': '0 0 20px hsl(var(--primary) / 0.5), 0 0 40px hsl(var(--primary) / 0.3)' },
         },
         'float-1': {
           '0%, 100%': { transform: 'translateY(0px)' },
