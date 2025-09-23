@@ -47,7 +47,7 @@ export default function Home() {
             <h1 className="font-headline text-5xl font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               RECAP
             </h1>
-            <p className="mt-2 max-w-4xl text-lg text-muted-foreground md:text-xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <p className="mt-2 max-w-4xl text-xl text-foreground/90 md:text-2xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               Recoverable Capsule for Orbital Debris Collection
             </p>
             <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-lg animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
