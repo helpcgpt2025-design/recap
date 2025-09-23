@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { ArrowRight, Crosshair, Shield, Globe, Zap, Database } from "lucide-react";
+import { ArrowRight, Crosshair, Shield, Globe, Zap, Database, Mail, Phone, MapPin, Send } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
@@ -64,6 +64,24 @@ const missionGoals = [
     {
         title: "Future-Ready Infrastructure",
         description: "Build scalable systems that can adapt to growing space activity and emerging debris challenges.",
+    },
+]
+
+const contactInfo = [
+    {
+        icon: Mail,
+        title: "Email",
+        value: "contact@recap-mission.com"
+    },
+    {
+        icon: Phone,
+        title: "Phone",
+        value: "+1 (555) 123-SPACE"
+    },
+    {
+        icon: MapPin,
+        title: "Mission Control",
+        value: "Houston Space Center, Texas, USA"
     },
 ]
 
@@ -221,32 +239,74 @@ export default function Home() {
       </section>
       
       <section id="contact" className="py-12 md:py-24 border-t border-border/50">
-        <div className="container mx-auto grid items-center gap-8 px-4 md:grid-cols-2 md:px-6">
-          <div className="space-y-4">
-            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact Us</h2>
-            <p className="text-muted-foreground">
-              Have a question about our mission, technology, or partnership opportunities? Reach out to our team.
-            </p>
-          </div>
-          <Card>
-            <CardContent className="pt-6">
-              <form className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Enter your name" />
+        <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center max-w-4xl mx-auto mb-12">
+                <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                    Get In <span className="text-primary">Touch</span>
+                </h2>
+                <p className="mt-4 text-muted-foreground">
+                    Ready to join the mission? Contact our team to learn more about RECAP technology and partnership opportunities.
+                </p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <Card className="hud-card">
+                    <CardHeader>
+                        <CardTitle className="font-headline">Send us a Message</CardTitle>
+                        <CardDescription>We'd love to hear from you. Fill out the form and we'll be in touch soon.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <form className="space-y-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-2">
+                                    <Label htmlFor="name">Name *</Label>
+                                    <Input id="name" placeholder="Your full name" />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="email">Email *</Label>
+                                    <Input id="email" type="email" placeholder="your.email@example.com" />
+                                </div>
+                            </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="organization">Organization</Label>
+                                <Input id="organization" placeholder="Your company or institution" />
+                            </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="message">Message *</Label>
+                                <Textarea id="message" placeholder="Tell us about your interest in RECAP or any questions you have..." className="min-h-[120px]" />
+                            </div>
+                            <Button type="submit" size="lg" className="w-full glowing-btn">
+                                <Send className="mr-2"/> Send Message
+                            </Button>
+                        </form>
+                    </CardContent>
+                </Card>
+                <div className="space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {contactInfo.map(info => (
+                           <Card key={info.title} className="hud-card">
+                               <CardHeader className="flex flex-row items-center gap-4">
+                                   <div className="bg-primary/10 p-3 rounded-lg border border-primary/30">
+                                       <info.icon className="h-6 w-6 text-primary" />
+                                   </div>
+                                   <div>
+                                       <CardTitle className="font-headline text-lg">{info.title}</CardTitle>
+                                       <p className="text-muted-foreground text-sm">{info.value}</p>
+                                   </div>
+                               </CardHeader>
+                           </Card>
+                        ))}
+                    </div>
+                    <Card className="hud-card">
+                        <CardHeader>
+                            <CardTitle className="font-headline">Partnership Opportunities</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground mb-4">Interested in collaborating on space debris solutions? Let's explore partnership opportunities.</p>
+                            <Button variant="outline">Learn More</Button>
+                        </CardContent>
+                    </Card>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="Enter your email" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="Enter your message" className="min-h-[120px]" />
-                </div>
-                <Button type="submit" className="w-full glowing-btn">Send Message</Button>
-              </form>
-            </CardContent>
-          </Card>
+            </div>
         </div>
       </section>
     </>
