@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
 const promoImage = PlaceHolderImages.find(img => img.id === 'promo-video-thumbnail');
 const capsuleImage = PlaceHolderImages.find(img => img.id === 'satellite-capsule');
+const aboutImage = PlaceHolderImages.find(img => img.id === 'about-recap');
 
 const stats = [
   { value: "500k+", label: "Debris Objects Tracked", animation: "animate-float-1" },
@@ -77,34 +78,39 @@ export default function Home() {
 
       <section id="about" className="py-12 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-            <Card className="bg-card/50 backdrop-blur-sm">
-              <CardHeader>
-                <Telescope className="h-10 w-10 text-primary mb-4"/>
-                <CardTitle className="font-headline">Our Vision</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">To create a sustainable future for space exploration by actively removing orbital debris and mitigating collision risks.</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-card/50 backdrop-blur-sm">
-              <CardHeader>
-                <Wrench className="h-10 w-10 text-primary mb-4"/>
-                <CardTitle className="font-headline">The Technology</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">Our autonomous capsule uses advanced AI and robotics to safely capture and de-orbit space junk, burning it up on re-entry.</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-card/50 backdrop-blur-sm">
-              <CardHeader>
-                <Rocket className="h-10 w-10 text-primary mb-4"/>
-                <CardTitle className="font-headline">Mission Goals</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">Systematically clear high-risk orbits, a safer operational environment for current and future satellite missions.</p>
-              </CardContent>
-            </Card>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About RECAP</h2>
+            <p className="mt-4 text-muted-foreground">
+              RECAP represents the next generation of space debris management technology. Our mission is to secure Earth's orbital environment for future generations through innovative autonomous collection systems.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-headline text-2xl font-bold">Our Vision</h3>
+                <p className="mt-2 text-muted-foreground">
+                  To create a sustainable orbital environment by removing dangerous space debris that threatens active satellites and future missions. We envision clean, safe orbital paths for the next generation of space exploration.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-headline text-2xl font-bold">Why It Matters</h3>
+                <p className="mt-2 text-muted-foreground">
+                  With over 500,000 pieces of debris orbiting Earth, the risk to critical infrastructure is unprecedented. Our technology provides the solution needed to protect billions of dollars in satellite assets and ensure continued space accessibility.
+                </p>
+              </div>
+            </div>
+            <div>
+              {aboutImage && (
+                <Image
+                  src={aboutImage.imageUrl}
+                  alt={aboutImage.description}
+                  width={600}
+                  height={400}
+                  className="rounded-lg object-cover"
+                  data-ai-hint={aboutImage.imageHint}
+                />
+              )}
+            </div>
           </div>
         </div>
       </section>
