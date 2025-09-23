@@ -20,10 +20,17 @@ export default function Header() {
           <Link href="/#mission" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary" prefetch={false}>
             Mission
           </Link>
+           <Link href="/#contact" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary" prefetch={false}>
+            Contact
+          </Link>
         </nav>
-        <div className="flex items-center gap-4">
-          <Button variant="ghost">Login</Button>
-          <Button className="glowing-btn">Register</Button>
+        <div className="flex items-center gap-2">
+          <Button variant="outline" asChild>
+            <Link href="/dashboard">Customer Login</Link>
+          </Button>
+          <Button className="glowing-btn" asChild>
+             <Link href="/admin">Admin Portal</Link>
+          </Button>
         </div>
       </div>
     </header>

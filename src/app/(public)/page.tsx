@@ -6,16 +6,23 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { PlayCircle, Rocket, Telescope, Wrench } from "lucide-react";
+import { PlayCircle, Rocket, Telescope, Wrench, ArrowRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
 const promoImage = PlaceHolderImages.find(img => img.id === 'promo-video-thumbnail');
 const capsuleImage = PlaceHolderImages.find(img => img.id === 'satellite-capsule');
 
+const stats = [
+  { value: "500k+", label: "Debris Objects Tracked", animation: "animate-float-1" },
+  { value: "99.9%", label: "Mission Success Rate", animation: "animate-float-2" },
+  { value: "24/7", label: "Orbital Monitoring", animation: "animate-float-3" },
+];
+
 export default function Home() {
   return (
     <>
-      <section className="relative h-[80vh] min-h-[600px] w-full">
+      <section className="relative h-screen min-h-[700px] w-full overflow-hidden">
         {heroImage && (
            <Image
             src={heroImage.imageUrl}
@@ -26,22 +33,44 @@ export default function Home() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
-          <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="glow-text text-primary">RECAP:</span> Recoverable Capsule
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/50 to-transparent" />
+        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
+          
+          <Badge variant="secondary" className="mb-4 animate-fade-in-up bg-black/30 backdrop-blur-sm border-primary/30">
+            <span className="relative flex h-2 w-2 mr-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/75 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+            </span>
+            Mission Active
+          </Badge>
+          
+          <h1 className="font-headline text-5xl font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            RECAP
           </h1>
-          <p className="mt-4 max-w-3xl text-lg text-muted-foreground md:text-xl">
-            Cleaning Space, Securing Orbits.
+           <p className="mt-2 max-w-4xl text-lg text-muted-foreground md:text-xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            Recoverable Capsule for Orbital Debris Collection
           </p>
-          <div className="mt-8 flex gap-4">
+          <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-lg animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+             Cleaning Space, Securing Orbits. Advanced autonomous systems for collecting and managing orbital debris to protect critical satellite infrastructure.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             <Button asChild size="lg" className="glowing-btn">
-              <Link href="#">Join the Mission</Link>
+              <Link href="#">Join the Mission <ArrowRight className="ml-2" /></Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="#technology">Learn More</Link>
+            <Button asChild variant="outline" size="lg" className="bg-black/30 backdrop-blur-sm">
+              <Link href="#mission"><PlayCircle className="mr-2"/> Watch Demo</Link>
             </Button>
           </div>
+
+           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12 w-full max-w-5xl animate-fade-in-up" style={{ animationDelay: '1s' }}>
+            {stats.map((stat) => (
+              <div key={stat.label} className={`rounded-lg border border-primary/20 bg-black/30 p-4 text-center backdrop-blur-sm ${stat.animation}`}>
+                <p className="font-headline text-4xl font-bold text-primary">{stat.value}</p>
+                <p className="text-sm text-muted-foreground">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
 
