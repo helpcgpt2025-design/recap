@@ -6,13 +6,12 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { PlayCircle, Rocket, Telescope, Wrench, ArrowRight, Crosshair, Shield, Globe, Zap, Database } from "lucide-react";
+import { ArrowRight, Crosshair, Shield, Globe, Zap, Database } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
-const promoImage = PlaceHolderImages.find(img => img.id === 'promo-video-thumbnail');
-const capsuleImage = PlaceHolderImages.find(img => img.id === 'satellite-capsule');
 const aboutImage = PlaceHolderImages.find(img => img.id === 'about-recap');
+const missionImage = PlaceHolderImages.find(img => img.id === 'mission-earth');
 
 const stats = [
   { value: "500k+", label: "Debris Objects Tracked", animation: "animate-float-1" },
@@ -27,7 +26,7 @@ const technologyFeatures = [
         description: "Advanced AI algorithms identify and track debris with millimeter precision in real-time.",
     },
     {
-        icon: Rocket,
+        icon: Zap,
         title: "Autonomous Recovery",
         description: "Self-navigating capsules execute complex orbital maneuvers for debris collection missions.",
     },
@@ -42,16 +41,31 @@ const technologyFeatures = [
         description: "Comprehensive monitoring and collection across all Earth orbital zones and trajectories.",
     },
     {
-        icon: Zap,
+        icon: Database,
         title: "Real-time Telemetry",
         description: "Live mission data streaming with instant alerts and comprehensive status monitoring.",
     },
     {
-        icon: Database,
+        icon: Zap,
         title: "Mission Analytics",
         description: "Detailed reports and predictive analytics for future debris mitigation strategies.",
     },
 ];
+
+const missionGoals = [
+    {
+        title: "Immediate Threat Removal",
+        description: "Target and collect the most dangerous debris objects that pose immediate collision risks to active satellites.",
+    },
+    {
+        title: "Sustainable Operations",
+        description: "Establish ongoing monitoring and collection protocols to maintain clean orbital environments.",
+    },
+    {
+        title: "Future-Ready Infrastructure",
+        description: "Build scalable systems that can adapt to growing space activity and emerging debris challenges.",
+    },
+]
 
 export default function Home() {
   return (
@@ -89,10 +103,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap justify-start gap-4 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
               <Button asChild size="lg" className="glowing-btn">
-                <Link href="#">Join the Mission <ArrowRight className="ml-2" /></Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="bg-black/30 backdrop-blur-sm">
-                <Link href="#"><PlayCircle className="mr-2"/> Watch Demo</Link>
+                <Link href="/dashboard">Join the Mission <ArrowRight className="ml-2" /></Link>
               </Button>
             </div>
 
@@ -111,14 +122,9 @@ export default function Home() {
 
       <section id="about" className="py-12 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About RECAP</h2>
-            <p className="mt-4 text-muted-foreground">
-              RECAP represents the next generation of space debris management technology. Our mission is to secure Earth's orbital environment for future generations through innovative autonomous collection systems.
-            </p>
-          </div>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
+              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About RECAP</h2>
               <div>
                 <h3 className="font-headline text-2xl font-bold">Our Vision</h3>
                 <p className="mt-2 text-muted-foreground">
@@ -176,22 +182,39 @@ export default function Home() {
 
       <section id="mission" className="py-12 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
-            <div className="mx-auto max-w-3xl text-center">
-                <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">See RECAP in Action</h2>
-                <p className="mt-4 text-muted-foreground">Watch our promotional video to understand the scale of the orbital debris problem and how RECAP is poised to solve it.</p>
-            </div>
-            <div className="mt-8 relative aspect-video max-w-4xl mx-auto overflow-hidden rounded-lg group">
-                {promoImage && (
-                    <Image
-                        src={promoImage.imageUrl}
-                        alt={promoImage.description}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        data-ai-hint={promoImage.imageHint}
-                    />
-                )}
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <PlayCircle className="h-20 w-20 text-white/70 transition-all group-hover:text-white group-hover:scale-110" />
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                    <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                        Mission <span className="text-primary">Goals</span>
+                    </h2>
+                    <p className="text-muted-foreground">
+                        Our comprehensive approach to orbital debris management focuses on immediate threat mitigation and long-term sustainability.
+                    </p>
+                    <ul className="space-y-6">
+                        {missionGoals.map((goal, index) => (
+                           <li key={goal.title} className="flex items-start gap-4">
+                               <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 border border-primary/30">
+                                 <div className={`h-4 w-4 rounded-full ${index === 0 ? 'bg-primary' : 'bg-primary/50'}`} />
+                               </div>
+                               <div>
+                                   <h3 className="font-headline text-xl font-bold">{goal.title}</h3>
+                                   <p className="text-muted-foreground">{goal.description}</p>
+                               </div>
+                           </li>
+                        ))}
+                    </ul>
+                </div>
+                <div>
+                  {missionImage && (
+                      <Image
+                          src={missionImage.imageUrl}
+                          alt={missionImage.description}
+                          width={600}
+                          height={600}
+                          className="rounded-lg object-cover"
+                          data-ai-hint={missionImage.imageHint}
+                      />
+                  )}
                 </div>
             </div>
         </div>
