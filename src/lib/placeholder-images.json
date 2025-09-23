@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "A view of Earth from orbit, with swirling clouds and city lights.",
-      "imageUrl": "https://images.unsplash.com/photo-1614121181207-4b6c334d353d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlYXJ0aCUyMG9yYml0fGVufDB8fHx8MTc1ODY0NTQyOHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "earth orbit"
+      "description": "A satellite collecting orbital debris with Earth in the background.",
+      "imageUrl": "https://images.unsplash.com/photo-1628188716161-e81fd8386d48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzYXRlbGxpdGUlMjBkZWJyaXN8ZW58MHx8fHwxNzU4NzM0Mjg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "satellite debris"
     },
     {
       "id": "satellite-capsule",
