@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { ArrowRight, Crosshair, Shield, Globe, Zap, Database, Mail, Phone, MapPin, Send } from "lucide-react";
+import { ArrowRight, Crosshair, Shield, Globe, Zap, Database, Mail, Phone, MapPin, Send, Play } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
@@ -122,6 +122,9 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap justify-start gap-4">
               <Button asChild size="lg" className="glowing-btn">
                 <Link href="/dashboard">Join the Mission <ArrowRight className="ml-2" /></Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link href="#">Watch Demo <Play className="ml-2" /></Link>
               </Button>
             </div>
 
@@ -315,3 +318,5 @@ export default function Home() {
     </>
   );
 }
+
+    
