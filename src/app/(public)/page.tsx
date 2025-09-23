@@ -14,9 +14,9 @@ const aboutImage = PlaceHolderImages.find(img => img.id === 'about-recap');
 const missionImage = PlaceHolderImages.find(img => img.id === 'mission-earth');
 
 const stats = [
-  { value: "500k+", label: "Debris Objects Tracked", animation: "animate-float-1" },
-  { value: "99.9%", label: "Mission Success Rate", animation: "animate-float-2" },
-  { value: "24/7", label: "Orbital Monitoring", animation: "animate-float-3" },
+  { value: "500k+", label: "Debris Objects Tracked" },
+  { value: "99.9%", label: "Mission Success Rate" },
+  { value: "24/7", label: "Orbital Monitoring" },
 ];
 
 const technologyFeatures = [
@@ -127,7 +127,7 @@ export default function Home() {
 
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12 w-full max-w-5xl animate-fade-in-up" style={{ animationDelay: '1s' }}>
               {stats.map((stat) => (
-                <div key={stat.label} className={`rounded-lg border border-primary/20 bg-black/30 p-4 text-center backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1 ${stat.animation}`}>
+                <div key={stat.label} className="rounded-lg border border-primary/20 bg-black/30 p-4 text-center backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1">
                   <p className="font-headline text-4xl font-bold text-primary">{stat.value}</p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </div>
