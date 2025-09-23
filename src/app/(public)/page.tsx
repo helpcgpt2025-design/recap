@@ -33,43 +33,45 @@ export default function Home() {
           />
         
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/50 to-transparent" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
-          
-          <Badge variant="secondary" className="mb-4 animate-fade-in-up bg-black/30 backdrop-blur-sm border-primary/30">
-            <span className="relative flex h-2 w-2 mr-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/75 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Mission Active
-          </Badge>
-          
-          <h1 className="font-headline text-5xl font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            RECAP
-          </h1>
-           <p className="mt-2 max-w-4xl text-lg text-muted-foreground md:text-xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            Recoverable Capsule for Orbital Debris Collection
-          </p>
-          <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-lg animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-             Cleaning Space, Securing Orbits. Advanced autonomous systems for collecting and managing orbital debris to protect critical satellite infrastructure.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            <Button asChild size="lg" className="glowing-btn">
-              <Link href="#">Join the Mission <ArrowRight className="ml-2" /></Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="bg-black/30 backdrop-blur-sm">
-              <Link href="#"><PlayCircle className="mr-2"/> Watch Demo</Link>
-            </Button>
-          </div>
+        <div className="container mx-auto h-full px-4 md:px-6">
+          <div className="relative z-10 flex h-full max-w-2xl flex-col items-start justify-center text-left">
+            
+            <Badge variant="secondary" className="mb-4 animate-fade-in-up bg-black/30 backdrop-blur-sm border-primary/30">
+              <span className="relative flex h-2 w-2 mr-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/75 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              Mission Active
+            </Badge>
+            
+            <h1 className="font-headline text-5xl font-bold tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              RECAP
+            </h1>
+            <p className="mt-2 max-w-4xl text-lg text-muted-foreground md:text-xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              Recoverable Capsule for Orbital Debris Collection
+            </p>
+            <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-lg animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+              Cleaning Space, Securing Orbits. Advanced autonomous systems for collecting and managing orbital debris to protect critical satellite infrastructure.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-start gap-4 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+              <Button asChild size="lg" className="glowing-btn">
+                <Link href="#">Join the Mission <ArrowRight className="ml-2" /></Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="bg-black/30 backdrop-blur-sm">
+                <Link href="#"><PlayCircle className="mr-2"/> Watch Demo</Link>
+              </Button>
+            </div>
 
-           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12 w-full max-w-5xl animate-fade-in-up" style={{ animationDelay: '1s' }}>
-            {stats.map((stat) => (
-              <div key={stat.label} className={`rounded-lg border border-primary/20 bg-black/30 p-4 text-center backdrop-blur-sm ${stat.animation}`}>
-                <p className="font-headline text-4xl font-bold text-primary">{stat.value}</p>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
-          </div>
+            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12 w-full max-w-5xl animate-fade-in-up" style={{ animationDelay: '1s' }}>
+              {stats.map((stat) => (
+                <div key={stat.label} className={`rounded-lg border border-primary/20 bg-black/30 p-4 text-center backdrop-blur-sm ${stat.animation}`}>
+                  <p className="font-headline text-4xl font-bold text-primary">{stat.value}</p>
+                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
+            </div>
 
+          </div>
         </div>
       </section>
 
@@ -100,7 +102,7 @@ export default function Home() {
                 <CardTitle className="font-headline">Mission Goals</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">Systematically clear high-risk orbits, providing a safer operational environment for current and future satellite missions.</p>
+                <p className="text-muted-foreground">Systematically clear high-risk orbits, a safer operational environment for current and future satellite missions.</p>
               </CardContent>
             </Card>
           </div>
