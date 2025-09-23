@@ -4,8 +4,15 @@ import { useState, useEffect } from 'react';
 
 const GlowingCursor = () => {
   const [points, setPoints] = useState<{ x: number; y: number }[]>([]);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       setPoints(prevPoints => [...prevPoints, { x: e.clientX, y: e.clientY }]);
     };
@@ -26,10 +33,9 @@ const GlowingCursor = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrame);
     };
-  }, []);
-  
-  // Don't render on server
-  if (typeof window === 'undefined') {
+  }, [mounted]);
+
+  if (!mounted) {
     return null;
   }
 
