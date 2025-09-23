@@ -102,7 +102,7 @@ export default function Home() {
         <div className="container mx-auto h-full px-4 md:px-6">
           <div className="relative z-10 flex h-full max-w-2xl flex-col items-start justify-center text-left">
             
-            <Badge variant="secondary" className="mb-4 animate-fade-in-up bg-black/30 backdrop-blur-sm border-primary/30">
+            <Badge variant="secondary" className="mb-4 bg-black/30 backdrop-blur-sm border-primary/30">
               <span className="relative flex h-2 w-2 mr-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/75 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -110,22 +110,22 @@ export default function Home() {
               Mission Active
             </Badge>
             
-            <h1 className="font-headline text-5xl font-bold tracking-tight text-primary glow-text sm:text-6xl md:text-7xl lg:text-8xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <h1 className="font-headline text-5xl font-bold tracking-tight text-primary glow-text sm:text-6xl md:text-7xl lg:text-8xl" style={{ animationDelay: '0.2s' }}>
               RECAP
             </h1>
-            <p className="mt-2 max-w-4xl text-xl text-foreground/90 md:text-2xl animate-fade-in-up font-medium" style={{ animationDelay: '0.4s' }}>
+            <p className="mt-2 max-w-4xl text-2xl text-foreground/90 md:text-3xl font-bold" style={{ animationDelay: '0.4s' }}>
               Recoverable Capsule for Orbital Debris Collection
             </p>
-            <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-lg animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+            <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-lg" style={{ animationDelay: '0.6s' }}>
               Cleaning Space, Securing Orbits. Advanced autonomous systems for collecting and managing orbital debris to protect critical satellite infrastructure.
             </p>
-            <div className="mt-8 flex flex-wrap justify-start gap-4 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+            <div className="mt-8 flex flex-wrap justify-start gap-4" style={{ animationDelay: '0.8s' }}>
               <Button asChild size="lg" className="glowing-btn">
                 <Link href="/dashboard">Join the Mission <ArrowRight className="ml-2" /></Link>
               </Button>
             </div>
 
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12 w-full max-w-5xl animate-fade-in-up" style={{ animationDelay: '1s' }}>
+            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12 w-full max-w-5xl" style={{ animationDelay: '1s' }}>
               {stats.map((stat) => (
                 <div key={stat.label} className="rounded-lg border border-primary/20 bg-black/30 p-4 text-center backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1">
                   <p className="font-headline text-4xl font-bold text-primary">{stat.value}</p>
