@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/icons";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { cn } from "@/lib/utils";
+import { SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -18,12 +21,22 @@ export default function Header() {
   const activeSection = useActiveSection(["about", "technology", "mission", "timeline", "contact"]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-sm">
+    <header className="fixed top-4 left-0 right-0 z-40">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
           <Logo className="h-8 w-8 text-primary" />
           <span className="font-headline text-2xl font-bold text-foreground">RECAP</span>
         </Link>
+        
+        {/* Mobile Nav Trigger */}
+        <SheetTrigger asChild>
+            <Button variant="outline" size="icon" className="md:hidden">
+              <Menu className="h-6 w-6" />
+              <span className="sr-only">Open navigation menu</span>
+            </Button>
+        </SheetTrigger>
+
+        {/* Desktop Nav */}
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <Link 
@@ -38,7 +51,7 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="hidden items-center gap-2 md:flex">
           <Button variant="outline" asChild>
             <Link href="/login">Login</Link>
           </Button>

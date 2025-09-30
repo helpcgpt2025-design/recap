@@ -12,10 +12,7 @@ import { Progress } from "@/components/ui/progress";
 const debrisSamples = PlaceHolderImages.filter(img => img.id.startsWith('debris-sample'));
 
 async function toDataURL(url: string): Promise<string> {
-    // This is a temporary workaround to fetch images from picsum.photos
-    // In a real application, you would handle CORS properly.
-    const PROXY_URL = "https://cors-anywhere.herokuapp.com/";
-    const response = await fetch(PROXY_URL + url);
+    const response = await fetch(url);
     const blob = await response.blob();
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -45,7 +42,7 @@ export default function ClassifyForm() {
             setResult(classificationResult);
         } catch (e) {
             console.error(e);
-            setError("Failed to classify debris. Please ensure the CORS proxy is active or try a different image.");
+            setError("Failed to classify debris. Please try again.");
         } finally {
             setIsLoading(false);
         }
@@ -66,13 +63,12 @@ export default function ClassifyForm() {
                                 fill
                                 className="object-cover rounded-md"
                                 data-ai-hint={selectedImage.imageHint}
-                                unoptimized // Required for external images that are not configured in next.config.js
                             />
                         </div>
                         <div className="grid grid-cols-3 gap-2 mb-4">
                             {debrisSamples.map((sample) => (
                                 <button key={sample.id} onClick={() => setSelectedImage(sample)} className={`relative aspect-square rounded-md overflow-hidden ring-offset-background ring-offset-2 focus:ring-2 focus:ring-primary ${selectedImage.id === sample.id ? 'ring-2 ring-primary' : ''}`}>
-                                    <Image src={sample.imageUrl} alt={sample.description} fill className="object-cover" unoptimized />
+                                    <Image src={sample.imageUrl} alt={sample.description} fill className="object-cover" />
                                 </button>
                             ))}
                         </div>

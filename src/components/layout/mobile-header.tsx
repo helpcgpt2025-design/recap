@@ -1,23 +1,57 @@
 "use client";
 
-import { useSidebar, SidebarTrigger } from "@/components/ui/sidebar";
-import { Logo } from "@/components/icons";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { SheetClose } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
-export default function MobileHeader() {
-    const { isMobile } = useSidebar();
+const navLinks = [
+  { href: "#about", label: "About" },
+  { href: "#technology", label: "Technology" },
+  { href: "#mission", label: "Mission" },
+  { href: "#timeline", label: "Timeline" },
+  { href: "#contact", label: "Contact" },
+];
 
-    if (!isMobile) {
-        return null;
-    }
-
+export function MobileNav() {
+    const pathname = usePathname();
     return (
-        <header className="flex h-14 items-center justify-between border-b border-border bg-background/95 px-4 sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:hidden">
-            <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                <Logo className="h-6 w-6 text-primary" />
-                <span className="font-headline text-xl font-bold text-foreground">RECAP</span>
-            </Link>
-            <SidebarTrigger />
-        </header>
-    );
+        <div className="flex flex-col h-full">
+            <div className="flex items-center border-b pb-4">
+                <Link href="/" className="flex items-center gap-2" prefetch={false}>
+                    <Logo className="h-8 w-8 text-primary" />
+                    <span className="font-headline text-2xl font-bold text-foreground">RECAP</span>
+                </Link>
+            </div>
+            <nav className="flex flex-col gap-4 mt-8">
+                {navLinks.map((link, index) => (
+                <SheetClose asChild key={link.href}>
+                    <Link
+                        href={link.href}
+                        className={cn(
+                            "text-lg font-medium text-muted-foreground transition-colors hover:text-primary",
+                            pathname === link.href && "text-primary"
+                        )}
+                        >
+                        {link.label}
+                    </Link>
+                 </SheetClose>
+                ))}
+            </nav>
+            <div className="mt-auto flex flex-col gap-2">
+                <SheetClose asChild>
+                    <Button variant="outline" asChild>
+                        <Link href="/login">Login</Link>
+                    </Button>
+                </SheetClose>
+                <SheetClose asChild>
+                    <Button className="glowing-btn" asChild>
+                        <Link href="/login">Get Started</Link>
+                    </Button>
+                </SheetClose>
+            </div>
+        </div>
+    )
 }
