@@ -135,7 +135,7 @@ export default function Home() {
             </Badge>
             
             <h1 className="font-headline text-5xl font-bold tracking-tight text-foreground glow-text sm:text-6xl md:text-7xl lg:text-8xl">
-                <span className="text-primary">RECAP</span><br/>
+                <span className="text-gradient">RECAP</span><br/>
                 Recoverable Capsule
             </h1>
             <p className="font-headline text-3xl font-bold tracking-tight text-foreground/80 sm:text-4xl md:text-5xl">
@@ -384,5 +384,6 @@ export default function Home() {
 }
 
     
+
 
 

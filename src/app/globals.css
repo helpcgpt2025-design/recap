@@ -84,4 +84,8 @@
   .tech-card:hover {
     @apply border-primary shadow-primary/20 shadow-lg -translate-y-1 bg-secondary/50;
   }
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 to-orange-500 bg-clip-text text-transparent;
+  }
 }
+
