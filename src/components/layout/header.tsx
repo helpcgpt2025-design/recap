@@ -24,7 +24,7 @@ export default function Header() {
     <header className="fixed top-8 left-0 right-0 z-40 px-4">
       <div className="container mx-auto flex h-16 items-center justify-between rounded-full border border-primary/10 bg-background/30 px-6 backdrop-blur-sm">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <Image src="/images/logo.png" alt="RECAP Logo" width={160} height={43} priority />
+          <Image src="/images/logo.png" alt="RECAP Logo" width={240} height={65} priority />
         </Link>
         
         {/* Mobile Nav Trigger */}

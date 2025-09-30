@@ -40,7 +40,7 @@ export function AppSidebar() {
     <Sidebar>
         <SidebarHeader>
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/images/logo.png" alt="RECAP Logo" width={160} height={43} />
+            <Image src="/images/logo.png" alt="RECAP Logo" width={240} height={65} />
           </Link>
         </SidebarHeader>
         <SidebarContent>
