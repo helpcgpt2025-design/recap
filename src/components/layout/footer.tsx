@@ -11,8 +11,8 @@ const quickLinks = [
 
 const contactInfo = [
   { icon: Mail, value: "contact@recap-mission.com" },
-  { icon: Phone, value: "+1 (555) 123-SPACE" },
-  { icon: MapPin, value: "Houston Space Center, TX" },
+  { icon: Phone, value: "8977017599" },
+  { icon: MapPin, value: "Hyderabad, India" },
 ];
 
 export default function Footer() {
@@ -93,3 +93,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+    

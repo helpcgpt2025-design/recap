@@ -103,12 +103,12 @@ const contactInfo = [
     {
         icon: Phone,
         title: "Phone",
-        value: "+1 (555) 123-SPACE"
+        value: "8977017599"
     },
     {
         icon: MapPin,
         title: "Mission Control",
-        value: "Houston Space Center, Texas, USA"
+        value: "Hyderabad, India"
     },
 ]
 
@@ -391,3 +391,6 @@ export default function Home() {
 
 
 
+
+
+    
