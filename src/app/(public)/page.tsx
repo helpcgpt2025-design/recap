@@ -243,8 +243,8 @@ export default function Home() {
                            <li key={goal.title} className="flex items-start gap-4">
                                <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 border border-primary/30 flex-shrink-0">
                                    <div className="relative flex h-3 w-3">
-                                        <div className={`animate-ping absolute inline-flex h-full w-full rounded-full ${index === 0 ? 'bg-primary/75' : 'bg-primary/50'} opacity-75`}></div>
-                                        <div className={`relative inline-flex rounded-full h-3 w-3 ${index === 0 ? 'bg-primary' : 'bg-primary/50'}`}></div>
+                                        <div className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/75 opacity-75"></div>
+                                        <div className="relative inline-flex rounded-full h-3 w-3 bg-primary"></div>
                                    </div>
                                </div>
                                <div>
@@ -272,7 +272,7 @@ export default function Home() {
       </section>
 
       <section id="timeline" className="py-12 md:py-24 bg-secondary/20">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="container mx-auto px-4 smpx-6 md:px-8 lg:px-12">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Mission Timeline</h2>
             <p className="mt-4 text-muted-foreground">
