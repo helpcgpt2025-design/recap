@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 export default function WelcomeAnimation() {
@@ -43,9 +44,12 @@ export default function WelcomeAnimation() {
                 <source src="/video.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-black/50"></div>
-            <h1 className="relative z-10 animate-fade-in-up font-headline text-4xl font-bold text-white md:text-6xl">
-                Welcome to <span className="text-gradient">RECAP</span>
-            </h1>
+            <div className="relative z-10 flex flex-col items-center gap-4 animate-fade-in-up">
+                <h1 className="font-headline text-4xl font-bold text-white md:text-6xl">
+                    Welcome to <span className="text-gradient">RECAP</span>
+                </h1>
+                <Image src="/images/logo.png" alt="RECAP Logo" width={240} height={65} />
+            </div>
         </div>
     );
 }
