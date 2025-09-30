@@ -148,7 +148,7 @@ export default function Home() {
 
             <div className="mt-8 flex flex-wrap justify-start gap-4">
               <Button asChild size="lg" className="glowing-btn">
-                <Link href="/dashboard">Access Mission Data <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                <Link href="/login">Access Mission Data <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link href="#">Learn More</Link>
@@ -384,6 +384,7 @@ export default function Home() {
 }
 
     
+
 
 
 
