@@ -21,7 +21,7 @@ export function MobileNav() {
         <div className="flex flex-col h-full">
             <div className="flex items-center border-b pb-4">
                 <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                    <Image src="/logo.png" alt="RECAP Logo" width={120} height={32} />
+                    <Image src="/images/logo.png" alt="RECAP Logo" width={120} height={32} />
                 </Link>
             </div>
             <nav className="flex flex-col gap-4 mt-8">

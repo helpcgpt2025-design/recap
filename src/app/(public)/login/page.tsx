@@ -20,7 +20,7 @@ export default function LoginPage() {
         <Card className="hud-card">
             <CardHeader className="text-center">
                 <div className="flex flex-col justify-center items-center gap-3 mb-2">
-                    <Image src="/logo.png" alt="RECAP Logo" width={120} height={32} />
+                    <Image src="/images/logo.png" alt="RECAP Logo" width={120} height={32} />
                     <p className="text-muted-foreground -mt-2">Mission Control Access</p>
                 </div>
                 <TabsList className="grid w-full grid-cols-2">
