@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import GlowingCursor from '@/components/glowing-cursor';
+import WelcomeAnimation from '@/components/welcome-animation';
 
 export const metadata: Metadata = {
   title: 'RECAP Portal',
@@ -21,6 +22,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
+        <WelcomeAnimation />
         <GlowingCursor />
         {children}
         <Toaster />

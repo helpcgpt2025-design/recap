@@ -117,14 +117,14 @@ export default function Home() {
     <>
       <section className="relative h-screen min-h-[700px] w-full overflow-hidden">
         
-           <Image
-            src="https://picsum.photos/seed/recap-hero/1920/1080"
-            alt="A satellite collecting orbital debris with Earth in the background."
+           {heroImage && <Image
+            src={heroImage.imageUrl}
+            alt={heroImage.description}
             fill
             className="object-cover"
             priority
-            data-ai-hint="satellite space"
-          />
+            data-ai-hint={heroImage.imageHint}
+          />}
         
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         <div className="container mx-auto h-full px-4 sm:px-6 md:px-8 lg:px-12">

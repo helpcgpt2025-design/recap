@@ -68,7 +68,7 @@ export default function ClassifyForm() {
                         <div className="grid grid-cols-3 gap-2 mb-4">
                             {debrisSamples.map((sample) => (
                                 <button key={sample.id} onClick={() => setSelectedImage(sample)} className={`relative aspect-square rounded-md overflow-hidden ring-offset-background ring-offset-2 focus:ring-2 focus:ring-primary ${selectedImage.id === sample.id ? 'ring-2 ring-primary' : ''}`}>
-                                    <Image src={sample.imageUrl} alt={sample.description} fill className="object-cover" />
+                                    <Image src={sample.imageUrl} alt={sample.description} fill className="object-cover" data-ai-hint={sample.imageHint} />
                                 </button>
                             ))}
                         </div>
