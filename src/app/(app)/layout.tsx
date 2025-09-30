@@ -1,7 +1,7 @@
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/app-sidebar";
 import ScrollProgress from "@/components/scroll-progress";
-import MobileHeader from "@/components/layout/mobile-header";
+import { AppHeader } from "@/components/layout/mobile-header";
 
 export default function AppLayout({
   children,
@@ -12,7 +12,7 @@ export default function AppLayout({
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <MobileHeader />
+        <AppHeader />
         <div className="min-h-screen">
           {children}
         </div>

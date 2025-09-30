@@ -3,9 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { SheetClose } from "@/components/ui/sheet";
+import { SheetClose, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Menu } from "lucide-react";
+import { SidebarTrigger } from "../ui/sidebar";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -53,4 +55,14 @@ export function MobileNav() {
             </div>
         </div>
     )
+}
+
+
+export function AppHeader() {
+  return (
+    <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background/50 px-4 backdrop-blur-sm sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
+        <SidebarTrigger className="sm:hidden" />
+        <div className="flex-1" />
+    </header>
+  );
 }

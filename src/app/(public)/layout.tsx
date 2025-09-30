@@ -1,10 +1,8 @@
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import ScrollProgress from "@/components/scroll-progress";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { MobileNav } from "@/components/layout/mobile-header";
-import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
 
 export default function PublicLayout({
   children,
