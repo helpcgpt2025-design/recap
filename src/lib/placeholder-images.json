@@ -63,7 +63,7 @@
     {
       "id": "debris-sample-3",
       "description": "A third sample of orbital debris to be classified.",
-      "imageUrl": "https://picsum.seed/debris3/512/512",
+      "imageUrl": "https://images.unsplash.com/photo-1720277534762-a04682bab5e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtZXRhbCUyMGZyYWdtZW50fGVufDB8fHx8MTc1OTI0MTg0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "metal fragment"
     }
   ]
