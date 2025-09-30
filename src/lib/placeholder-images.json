@@ -3,67 +3,67 @@
     {
       "id": "hero-background",
       "description": "A satellite collecting orbital debris with Earth in the background.",
-      "imageUrl": "/hero-banner.jpg",
+      "imageUrl": "/images/hero-banner.jpg",
       "imageHint": "satellite space"
     },
     {
       "id": "about-recap",
       "description": "A futuristic spacecraft collecting debris near a planet.",
-      "imageUrl": "/about-recap.jpg",
+      "imageUrl": "/images/about-recap.jpg",
       "imageHint": "spacecraft planet"
     },
     {
       "id": "mission-earth",
       "description": "An image of Earth from space, with orbital paths highlighted.",
-      "imageUrl": "/mission-earth.jpg",
+      "imageUrl": "/images/mission-earth.jpg",
       "imageHint": "earth space"
     },
     {
       "id": "satellite-capsule",
       "description": "A futuristic satellite capsule for debris collection.",
-      "imageUrl": "/satellite-capsule.jpg",
+      "imageUrl": "/images/satellite-capsule.jpg",
       "imageHint": "satellite capsule"
     },
     {
       "id": "promo-video-thumbnail",
       "description": "Thumbnail for a promotional video about the RECAP mission.",
-      "imageUrl": "/promo-video-thumbnail.jpg",
+      "imageUrl": "/images/promo-video-thumbnail.jpg",
       "imageHint": "technology abstract"
     },
     {
       "id": "vision-card",
       "description": "Abstract image representing space vision.",
-      "imageUrl": "/vision-card.jpg",
+      "imageUrl": "/images/vision-card.jpg",
       "imageHint": "space telescope"
     },
     {
       "id": "technology-card",
       "description": "Abstract image representing space technology.",
-      "imageUrl": "/technology-card.jpg",
+      "imageUrl": "/images/technology-card.jpg",
       "imageHint": "robotic arm"
     },
     {
       "id": "mission-card",
       "description": "Abstract image representing the Earth mission.",
-      "imageUrl": "/mission-card.jpg",
+      "imageUrl": "/images/mission-card.jpg",
       "imageHint": "earth continents"
     },
     {
       "id": "debris-sample-1",
       "description": "A sample of orbital debris to be classified.",
-      "imageUrl": "/debris-sample-1.jpg",
+      "imageUrl": "/images/debris-sample-1.jpg",
       "imageHint": "space junk"
     },
     {
       "id": "debris-sample-2",
       "description": "A second sample of orbital debris to be classified.",
-      "imageUrl": "/debris-sample-2.jpg",
+      "imageUrl": "/images/debris-sample-2.jpg",
       "imageHint": "satellite part"
     },
     {
       "id": "debris-sample-3",
       "description": "A third sample of orbital debris to be classified.",
-      "imageUrl": "/debris-sample-3.jpg",
+      "imageUrl": "/images/debris-sample-3.jpg",
       "imageHint": "metal fragment"
     }
   ]
