@@ -14,9 +14,9 @@ const aboutImage = PlaceHolderImages.find(img => img.id === 'about-recap');
 const missionImage = PlaceHolderImages.find(img => img.id === 'mission-earth');
 
 const stats = [
-  { value: "500k+", label: "Debris Objects Tracked" },
-  { value: "99.9%", label: "Mission Success Rate" },
-  { value: "24/7", label: "Orbital Monitoring" },
+  { value: "98.7%", label: "Mission Success" },
+  { value: "24/7", label: "Live Monitoring" },
+  { value: "1000+", label: "Debris Tracked" },
 ];
 
 const technologyFeatures = [
@@ -100,31 +100,24 @@ export default function Home() {
         
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         <div className="container mx-auto h-full px-4 sm:px-6 md:px-8 lg:px-12">
-          <div className="relative z-10 flex h-full max-w-2xl flex-col items-start justify-center text-left">
+          <div className="relative z-10 flex h-full max-w-3xl flex-col items-start justify-center text-left">
             
             <Badge variant="secondary" className="mb-4 bg-black/30 backdrop-blur-sm border-primary/30">
-              <span className="relative flex h-2 w-2 mr-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary/75 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              Mission Active
+              TEAM VAJRA PRESENTS
             </Badge>
             
-            <h1 className="font-headline text-5xl font-bold tracking-tight text-primary glow-text sm:text-6xl md:text-7xl lg:text-8xl" style={{ textShadow: '0 0 15px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--primary) / 0.5)' }}>
-              RECAP
-            </h1>
-            <p className="mt-2 max-w-4xl text-2xl text-foreground/90 md:text-3xl font-bold">
+            <h1 className="font-headline text-5xl font-bold tracking-tight text-foreground glow-text sm:text-6xl md:text-7xl lg:text-8xl" style={{ textShadow: '0 0 15px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--primary) / 0.5)' }}>
               Recoverable Capsule for Orbital Debris Collection
-            </p>
+            </h1>
             <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-lg">
-              Cleaning Space, Securing Orbits. Advanced autonomous systems for collecting and managing orbital debris to protect critical satellite infrastructure.
+              Advanced CubeSat mission control platform for real-time debris tracking, telemetry monitoring, and secure mission data management.
             </p>
             <div className="mt-8 flex flex-wrap justify-start gap-4">
               <Button asChild size="lg" className="glowing-btn">
-                <Link href="/dashboard">Join the Mission <ArrowRight className="ml-2" /></Link>
+                <Link href="/dashboard">Access Portal</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="#">Watch Demo <Play className="ml-2" /></Link>
+                <Link href="#">Learn More</Link>
               </Button>
             </div>
 

@@ -19,13 +19,10 @@ const customerLinks = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/classify", label: "Debris Analysis", icon: TestTube },
   { href: "/reports", label: "Reports", icon: FileText },
-  { href: "/profile", label: "Profile", icon: User },
-  { href: "/support", label: "Support", icon: LifeBuoy },
 ];
 
 const adminLinks = [
-  { href: "/admin", label: "Admin Overview", icon: LayoutDashboard },
-  { href: "/admin/users", label: "User Management", icon: Users },
+  { href: "/admin", label: "Admin Overview", icon: Users },
   { href: "/admin/missions", label: "Mission Data", icon: Database },
 ];
 
@@ -67,6 +64,22 @@ export function AppSidebar() {
         </SidebarContent>
         <SidebarFooter>
           <SidebarMenu>
+             <SidebarMenuItem>
+              <SidebarMenuButton asChild tooltip={{ children: 'Profile' }}>
+                <Link href="/profile">
+                  <User />
+                  <span>Profile</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+             <SidebarMenuItem>
+              <SidebarMenuButton asChild tooltip={{ children: 'Support' }}>
+                <Link href="/support">
+                  <LifeBuoy />
+                  <span>Support</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip={{ children: 'Logout' }}>
                 <Link href="/">
@@ -74,7 +87,7 @@ export function AppSidebar() {
                   <span>Logout</span>
                 </Link>
               </SidebarMenuButton>
-            </SidebarMenuItem>
+            </sidebarMenuItem>
           </SidebarMenu>
         </SidebarFooter>
     </Sidebar>

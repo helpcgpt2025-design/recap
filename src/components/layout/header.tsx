@@ -39,10 +39,10 @@ export default function Header() {
         </nav>
         <div className="flex items-center gap-2">
           <Button variant="outline" asChild>
-            <Link href="/dashboard">Customer Login</Link>
+            <Link href="/dashboard">Login</Link>
           </Button>
           <Button className="glowing-btn" asChild>
-             <Link href="/admin">Admin Portal</Link>
+             <Link href="/dashboard">Get Started</Link>
           </Button>
         </div>
       </div>
