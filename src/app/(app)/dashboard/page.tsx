@@ -2,7 +2,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import type { CartesianGridProps } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Bar, BarChart, Line, LineChart, XAxis, YAxis, Tooltip } from 'recharts';
+import { Bar, BarChart, Line, LineChart, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 import { ChartContainer, ChartTooltipContent, type ChartConfig } from '@/components/ui/chart';
 import { Activity, Satellite, AlertTriangle, CheckCircle, Rocket } from 'lucide-react';
 
