@@ -20,7 +20,12 @@ export default function Footer() {
   return (
     <footer className="w-full border-t border-border/50 bg-background/50">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="py-8 text-center">
+            <p className="text-sm text-muted-foreground">
+                Powered by Team VAJRA
+            </p>
+        </div>
+        <div className="grid grid-cols-1 gap-8 py-12 border-t border-border/50 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2" prefetch={false}>
               <Image src="/images/logo.png" alt="RECAP Logo" width={240} height={65} />
@@ -76,9 +81,6 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-center gap-4 border-t border-border/50 py-6">
           <p className="text-center text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} RECAP Mission. All rights reserved.
-          </p>
-          <p className="text-center text-sm text-muted-foreground">
-            Powered by Team VAJRA
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-sm text-muted-foreground hover:text-primary" prefetch={false}>
