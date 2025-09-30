@@ -1,64 +1,36 @@
-'use client';
-import { useState, useEffect, useMemo } from 'react';
-import type { CartesianGridProps } from 'recharts';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Bar, BarChart, Line, LineChart, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
-import { ChartContainer, ChartTooltipContent, type ChartConfig } from '@/components/ui/chart';
-import { Activity, Satellite, AlertTriangle, CheckCircle, Rocket } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Activity, Satellite, AlertTriangle, CheckCircle, Rocket, Cpu, Shield, Bot } from "lucide-react";
 
-const orbitData = [
-  { time: '00:00', altitude: 400 },
-  { time: '03:00', altitude: 405 },
-  { time: '06:00', altitude: 410 },
-  { time: '09:00', altitude: 395 },
-  { time: '12:00', altitude: 402 },
-  { time: '15:00', altitude: 408 },
-  { time: '18:00', altitude: 400 },
-  { time: '21:00', altitude: 398 },
-  { time: '24:00', altitude: 400 },
+const kpiData = [
+    { title: "Altitude", value: "408.5 km", status: "Optimal", statusColor: "bg-green-500/20 text-green-400 border-green-500/30" },
+    { title: "Velocity", value: "7.68 km/s", status: "Nominal", statusColor: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
+    { title: "Beacon Status", value: "Active", status: "Online", statusColor: "bg-green-500/20 text-green-400 border-green-500/30" },
+    { title: "Capsule Status", value: "Ready", status: "Ready", statusColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30" },
 ];
 
-const debrisData = [
-  { type: 'Fragments', count: 12, fill: 'var(--color-fragments)' },
-  { type: 'Satellites', count: 5, fill: 'var(--color-satellites)' },
-  { type: 'Boosters', count: 3, fill: 'var(--color-boosters)' },
-  { type: 'Other', count: 8, fill: 'var(--color-other)' },
+const orbitalParameters = [
+    { label: "Inclination", value: 51.6, display: "51.6°" },
+    { label: "Eccentricity", value: 0.12, display: "0.0012" }, // low value for display
+    { label: "Period", value: 92.8, display: "92.8 min" },
+    { label: "Solar Power", value: 98, display: "98%" },
 ];
 
-const chartConfig = {
-  altitude: {
-    label: 'Altitude (km)',
-    color: 'hsl(var(--primary))',
-  },
-  fragments: {
-    label: 'Fragments',
-    color: 'hsl(var(--chart-1))',
-  },
-  satellites: {
-    label: 'Defunct Satellites',
-    color: 'hsl(var(--chart-2))',
-  },
-  boosters: {
-    label: 'Rocket Boosters',
-    color: 'hsl(var(--chart-3))',
-  },
-  other: {
-    label: 'Other Debris',
-    color: 'hsl(var(--chart-4))',
-  },
-} satisfies ChartConfig;
+const systemHealth = [
+    { name: "Communication Link", status: "Active", icon: Activity },
+    { name: "Debris Collector", status: "Operational", icon: Bot },
+    { name: "Recovery Capsule", status: "Ready", icon: Shield },
+    { name: "Propulsion System", status: "Standby", icon: Rocket },
+];
 
-const CustomTooltip = (props: any) => {
-  if (props.active && props.payload && props.payload.length) {
-    return <ChartTooltipContent {...props} />;
-  }
-  return null;
-};
-
-const commonGridProps: Omit<CartesianGridProps, 'ref'> = {
-  strokeDasharray: '3 3',
-  stroke: 'hsl(var(--border) / 0.5)',
-};
+const missionStats = [
+    { value: "147", label: "Debris Tracked" },
+    { value: "23", label: "Successful Captures" },
+    { value: "89", label: "Days in Orbit" },
+    { value: "1,342", label: "Orbits Completed" },
+]
 
 const MissionTimeline = () => {
     const events = [
@@ -70,10 +42,9 @@ const MissionTimeline = () => {
     ];
 
     return (
-        <Card className="hud-card col-span-1 md:col-span-2">
+        <Card className="hud-card hud-card-bleed">
             <CardHeader>
-                <CardTitle className="font-headline flex items-center gap-2"><Activity /> Mission Events</CardTitle>
-                <CardDescription>Recent operational highlights from the mission.</CardDescription>
+                <CardTitle className="font-headline">Recent Events</CardTitle>
             </CardHeader>
             <CardContent>
                 <div className="space-y-4">
@@ -92,89 +63,106 @@ const MissionTimeline = () => {
     );
 };
 
+
 export default function DashboardPage() {
-  const [telemetry, setTelemetry] = useState({
-    altitude: 400.0,
-    speed: 7.8,
-    status: 'Nominal',
-  });
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTelemetry(prev => ({
-        altitude: parseFloat((prev.altitude + (Math.random() - 0.5) * 0.2).toFixed(3)),
-        speed: parseFloat((prev.speed + (Math.random() - 0.5) * 0.01).toFixed(3)),
-        status: Math.random() > 0.95 ? 'Anomaly' : 'Nominal',
-      }));
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const TelemetryCard = ({ title, value, unit, status }: { title: string, value: string | number, unit: string, status?: string }) => {
-    const statusColor = status === 'Anomaly' ? 'text-red-500' : 'text-green-400';
     return (
-      <div className="hud-card p-4">
-        <p className="text-sm text-muted-foreground">{title}</p>
-        <p className="font-headline text-3xl font-bold text-primary">
-          {value}
-          <span className="text-lg font-sans text-muted-foreground ml-2">{unit}</span>
-        </p>
-        {status && <p className={`text-sm font-bold ${statusColor}`}>{status}</p>}
-      </div>
-    );
-  };
+        <div className="container mx-auto p-4 md:p-6 lg:p-8 space-y-6">
+            <Card className="hud-card hud-card-bleed">
+                <CardContent>
+                    <h1 className="font-headline text-2xl font-bold">Welcome Back, Mission Specialist</h1>
+                    <p className="text-muted-foreground">Real-time access to RECAP mission telemetry and status</p>
+                </CardContent>
+            </Card>
 
-  return (
-    <div className="container mx-auto p-4 md:p-6 lg:p-8">
-      <h1 className="font-headline text-3xl font-bold mb-6">Mission Dashboard</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <TelemetryCard title="Altitude" value={telemetry.altitude} unit="km" />
-        <TelemetryCard title="Speed" value={telemetry.speed} unit="km/s" />
-        <TelemetryCard title="Capsule Status" value={telemetry.status} unit="" status={telemetry.status} />
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-        <Card className="hud-card">
-          <CardHeader>
-            <CardTitle className="font-headline">Orbit Trajectory</CardTitle>
-            <CardDescription>Altitude over the last 24 hours.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ChartContainer config={chartConfig} className="aspect-video h-[250px] w-full">
-              <LineChart data={orbitData} margin={{ left: 12, right: 12, top: 10, bottom: 10 }}>
-                <CartesianGrid {...commonGridProps} />
-                <XAxis dataKey="time" tickLine={false} axisLine={false} tickMargin={8} tickFormatter={(value) => value.slice(0, 5)} />
-                <YAxis domain={['dataMin - 10', 'dataMax + 5']} hide />
-                <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'hsl(var(--primary))', strokeWidth: 2, strokeDasharray: '3 3' }} />
-                <Line type="monotone" dataKey="altitude" stroke="hsl(var(--primary))" strokeWidth={2} dot={false} />
-              </LineChart>
-            </ChartContainer>
-          </CardContent>
-        </Card>
-        
-        <Card className="hud-card">
-          <CardHeader>
-            <CardTitle className="font-headline">Debris Captured</CardTitle>
-            <CardDescription>Types of debris collected this mission.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ChartContainer config={chartConfig} className="aspect-video h-[250px] w-full">
-              <BarChart data={debrisData} accessibilityLayer>
-                <CartesianGrid {...commonGridProps} />
-                <XAxis dataKey="type" tickLine={false} tickMargin={10} axisLine={false} />
-                <YAxis hide />
-                <Tooltip content={<CustomTooltip />} cursor={{ fill: 'hsl(var(--accent))' }} />
-                <Bar dataKey="count" radius={4} />
-              </BarChart>
-            </ChartContainer>
-          </CardContent>
-        </Card>
-      </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {kpiData.map(kpi => (
+                    <Card key={kpi.title} className="hud-card">
+                        <CardHeader className="pb-2">
+                             <div className="flex justify-between items-center">
+                                <CardTitle className="text-sm font-medium text-muted-foreground">{kpi.title}</CardTitle>
+                                <Badge variant="outline" className={kpi.statusColor}>{kpi.status}</Badge>
+                            </div>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="text-3xl font-bold font-headline text-primary">{kpi.value}</div>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
 
-       <div className="mt-6">
-            <MissionTimeline />
+            <Tabs defaultValue="telemetry" className="w-full">
+                <TabsList className="grid w-full grid-cols-3 hud-card !p-1">
+                    <TabsTrigger value="telemetry">Live Telemetry</TabsTrigger>
+                    <TabsTrigger value="timeline">Mission Timeline</TabsTrigger>
+                    <TabsTrigger value="reports">Data Reports</TabsTrigger>
+                </TabsList>
+                <TabsContent value="telemetry" className="mt-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <Card className="hud-card hud-card-bleed">
+                            <CardHeader>
+                                <CardTitle className="font-headline flex items-center gap-2"><Cpu /> Orbital Parameters</CardTitle>
+                            </CardHeader>
+                            <CardContent className="space-y-4">
+                                {orbitalParameters.map(param => (
+                                    <div key={param.label}>
+                                        <div className="flex justify-between text-sm mb-1">
+                                            <span>{param.label}</span>
+                                            <span className="font-mono text-muted-foreground">{param.display}</span>
+                                        </div>
+                                        <Progress value={param.value} className="h-2" />
+                                    </div>
+                                ))}
+                            </CardContent>
+                        </Card>
+                        <Card className="hud-card hud-card-bleed">
+                            <CardHeader>
+                                <CardTitle className="font-headline flex items-center gap-2"><Shield /> System Health</CardTitle>
+                            </CardHeader>
+                            <CardContent className="space-y-2">
+                                {systemHealth.map(system => (
+                                    <div key={system.name} className="flex items-center justify-between p-3 bg-black/20 rounded-md">
+                                        <div className="flex items-center gap-2">
+                                            <system.icon className="h-5 w-5 text-primary" />
+                                            <span className="font-medium">{system.name}</span>
+                                        </div>
+                                        <Badge variant="outline" className={
+                                            system.status === "Active" ? "bg-green-500/20 text-green-400 border-green-500/30" :
+                                            system.status === "Operational" ? "bg-blue-500/20 text-blue-400 border-blue-500/30" :
+                                            system.status === "Ready" ? "bg-cyan-500/20 text-cyan-400 border-cyan-500/30" : "bg-gray-500/20 text-gray-400 border-gray-500/30"
+                                        }>
+                                            {system.status}
+                                        </Badge>
+                                    </div>
+                                ))}
+                            </CardContent>
+                        </Card>
+                    </div>
+                </TabsContent>
+                <TabsContent value="timeline" className="mt-6">
+                   <MissionTimeline />
+                </TabsContent>
+                 <TabsContent value="reports" className="mt-6">
+                    <Card className="hud-card hud-card-bleed">
+                        <CardHeader><CardTitle>Data Reports</CardTitle></CardHeader>
+                        <CardContent><p className="text-muted-foreground">Detailed mission reports will be available here.</p></CardContent>
+                    </Card>
+                </TabsContent>
+            </Tabs>
+            
+            <Card className="hud-card hud-card-bleed">
+                <CardHeader>
+                    <CardTitle className="font-headline">Mission Statistics</CardTitle>
+                </CardHeader>
+                <CardContent className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    {missionStats.map(stat => (
+                        <div key={stat.label}>
+                            <p className="text-4xl font-bold font-headline text-primary">{stat.value}</p>
+                            <p className="text-sm text-muted-foreground">{stat.label}</p>
+                        </div>
+                    ))}
+                </CardContent>
+            </Card>
+
         </div>
-    </div>
-  );
+    );
 }

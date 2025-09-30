@@ -17,7 +17,7 @@ import { LayoutDashboard, TestTube, FileText, User, LifeBuoy, Users, Database, L
 
 const customerLinks = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/classify", label: "Debris Analysis", icon: TestTube },
+  { href: "/classify", label: "Debris Analyzer", icon: TestTube },
   { href: "/reports", label: "Reports", icon: FileText },
 ];
 
@@ -66,7 +66,7 @@ export function AppSidebar() {
           <SidebarMenu>
              <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip={{ children: 'Profile' }}>
-                <Link href="/profile">
+                <Link href="#">
                   <User />
                   <span>Profile</span>
                 </Link>
@@ -74,7 +74,7 @@ export function AppSidebar() {
             </SidebarMenuItem>
              <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip={{ children: 'Support' }}>
-                <Link href="/support">
+                <Link href="#">
                   <LifeBuoy />
                   <span>Support</span>
                 </Link>

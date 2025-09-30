@@ -76,8 +76,15 @@
     @apply bg-gradient-to-r from-blue-500 to-cyan-400 text-white shadow-lg shadow-cyan-500/30 transition-all duration-300 ease-out hover:shadow-xl hover:shadow-cyan-500/50 hover:-translate-y-0.5 hover:from-blue-600 hover:to-cyan-500;
   }
   .hud-card {
-    @apply rounded-lg border border-primary/20 bg-secondary/30 p-4 text-card-foreground shadow-lg shadow-black/20 backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/20 sm:p-6;
+    @apply rounded-lg border border-primary/20 bg-secondary/30 text-card-foreground shadow-lg shadow-black/20 backdrop-blur-sm transition-all duration-300;
   }
+  .hud-card:not(.hud-card-bleed) {
+     @apply p-4 sm:p-6;
+  }
+  .hud-card.hud-card-bleed .cm-card-content {
+      @apply p-0;
+  }
+
   .glow-text {
     @apply animate-glow;
   }
