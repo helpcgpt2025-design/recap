@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col items-center justify-between gap-4 border-t border-border/50 py-6 sm:flex-row">
           <p className="text-center text-sm text-muted-foreground sm:text-left">
-            &copy; {new Date().getFullYear()} RECAP Mission. All rights reserved. Protecting Earth's orbital environment.
+            &copy; {new Date().getFullYear()} RECAP Mission. All rights reserved. Powered by Team VAJRA.
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-sm text-muted-foreground hover:text-primary" prefetch={false}>

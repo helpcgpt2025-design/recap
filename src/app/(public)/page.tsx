@@ -128,7 +128,7 @@ export default function Home() {
         
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         <div className="container mx-auto h-full px-4 sm:px-6 md:px-8 lg:px-12">
-          <div className="relative z-10 flex h-full max-w-3xl flex-col items-start justify-center text-left">
+          <div className="relative z-10 flex h-full max-w-3xl flex-col items-start justify-center pt-32 text-left">
             
             <Badge variant="secondary" className="mb-4 bg-black/30 backdrop-blur-sm border-primary/30">
               Next-Gen Orbital Debris Collection
@@ -145,6 +145,10 @@ export default function Home() {
             <p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
               Advanced CubeSat technology designed to capture and recover orbital debris, making space safer for future missions.
             </p>
+            
+            <Badge variant="outline" className="mt-4 bg-black/20 border-primary/20">
+              Powered by Team VAJRA
+            </Badge>
 
             <div className="mt-8 flex flex-wrap justify-start gap-4">
               <Button asChild size="lg" className="glowing-btn">
