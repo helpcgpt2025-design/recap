@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/icons";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { cn } from "@/lib/utils";
 import { SheetTrigger } from "@/components/ui/sheet";
@@ -24,8 +24,7 @@ export default function Header() {
     <header className="fixed top-8 left-0 right-0 z-40 px-4">
       <div className="container mx-auto flex h-16 items-center justify-between rounded-full border border-primary/10 bg-background/30 px-6 backdrop-blur-sm">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <Logo className="h-8 w-8 text-primary" />
-          <span className="font-headline text-2xl font-bold text-foreground">RECAP</span>
+          <Image src="/logo.png" alt="RECAP Logo" width={110} height={28} priority />
         </Link>
         
         {/* Mobile Nav Trigger */}

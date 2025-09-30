@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { SheetClose } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -21,8 +21,7 @@ export function MobileNav() {
         <div className="flex flex-col h-full">
             <div className="flex items-center border-b pb-4">
                 <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                    <Logo className="h-8 w-8 text-primary" />
-                    <span className="font-headline text-2xl font-bold text-foreground">RECAP</span>
+                    <Image src="/logo.png" alt="RECAP Logo" width={120} height={32} />
                 </Link>
             </div>
             <nav className="flex flex-col gap-4 mt-8">

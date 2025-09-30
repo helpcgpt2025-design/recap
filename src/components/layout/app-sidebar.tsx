@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { 
   Sidebar, 
@@ -11,7 +12,6 @@ import {
   SidebarMenuButton,
   SidebarFooter,
 } from '@/components/ui/sidebar';
-import { Logo } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import { LayoutDashboard, TestTube, FileText, User, LifeBuoy, Users, Database, LogOut } from 'lucide-react';
 
@@ -39,10 +39,9 @@ export function AppSidebar() {
   return (
     <Sidebar>
         <SidebarHeader>
-          <div className="flex items-center gap-2">
-            <Logo className="h-8 w-8 text-primary" />
-            <span className="font-headline text-2xl font-bold text-foreground">RECAP</span>
-          </div>
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/logo.png" alt="RECAP Logo" width={120} height={32} />
+          </Link>
         </SidebarHeader>
         <SidebarContent>
           <SidebarMenu>

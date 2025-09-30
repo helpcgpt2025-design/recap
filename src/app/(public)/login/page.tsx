@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo } from "@/components/icons";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -19,12 +19,9 @@ export default function LoginPage() {
       <Tabs defaultValue="register" className="w-full max-w-md">
         <Card className="hud-card">
             <CardHeader className="text-center">
-                <div className="flex justify-center items-center gap-3 mb-2">
-                    <Logo className="h-10 w-10 text-primary" />
-                    <div>
-                        <h1 className="font-headline text-2xl font-bold">RECAP Portal</h1>
-                        <p className="text-muted-foreground">Mission Control Access</p>
-                    </div>
+                <div className="flex flex-col justify-center items-center gap-3 mb-2">
+                    <Image src="/logo.png" alt="RECAP Logo" width={120} height={32} />
+                    <p className="text-muted-foreground -mt-2">Mission Control Access</p>
                 </div>
                 <TabsList className="grid w-full grid-cols-2">
                     <TabsTrigger value="login">Login</TabsTrigger>

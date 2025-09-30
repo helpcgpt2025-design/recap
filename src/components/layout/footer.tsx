@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Logo, Mail, Phone, MapPin } from "@/components/icons";
+import Image from "next/image";
+import { Mail, Phone, MapPin } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 
 const quickLinks = [
@@ -22,8 +23,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2" prefetch={false}>
-              <Logo className="h-8 w-8 text-primary" />
-              <span className="font-headline text-2xl font-bold text-foreground">RECAP</span>
+              <Image src="/logo.png" alt="RECAP Logo" width={120} height={32} />
             </Link>
             <p className="text-sm text-muted-foreground">
               Recoverable Capsule for Orbital Debris Collection. Securing Earth's orbital environment for future generations through advanced autonomous systems.
@@ -96,6 +96,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-    
-
