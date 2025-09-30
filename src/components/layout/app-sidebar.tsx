@@ -74,7 +74,7 @@ export function AppSidebar() {
             </SidebarMenuItem>
              <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip={{ children: 'Support' }}>
-                <Link href="#">
+                <Link href="/#contact">
                   <LifeBuoy />
                   <span>Support</span>
                 </Link>

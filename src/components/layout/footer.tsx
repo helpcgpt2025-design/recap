@@ -65,7 +65,7 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground">Join us in our mission to keep space clean and safe for everyone.</p>
             <div className="flex flex-col space-y-2">
                 <Button asChild>
-                    <Link href="/dashboard">Join the Mission</Link>
+                    <Link href="/login">Join the Mission</Link>
                 </Button>
                 <Button variant="outline" asChild>
                     <Link href="#">Watch Demo</Link>
