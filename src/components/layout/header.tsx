@@ -21,8 +21,8 @@ export default function Header() {
   const activeSection = useActiveSection(["about", "technology", "mission", "timeline", "contact"]);
 
   return (
-    <header className="fixed top-4 left-0 right-0 z-40">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+    <header className="fixed top-4 left-0 right-0 z-40 px-4">
+      <div className="container mx-auto flex h-16 items-center justify-between rounded-full border border-primary/10 bg-background/30 px-6 backdrop-blur-sm">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
           <Logo className="h-8 w-8 text-primary" />
           <span className="font-headline text-2xl font-bold text-foreground">RECAP</span>
