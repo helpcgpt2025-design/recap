@@ -14,9 +14,9 @@ const aboutImage = PlaceHolderImages.find(img => img.id === 'about-recap');
 const missionImage = PlaceHolderImages.find(img => img.id === 'mission-earth');
 
 const stats = [
-  { value: "100+", label: "Debris Targets" },
-  { value: "500km", label: "Orbital Range" },
-  { value: "24/7", label: "Monitoring" },
+    { value: "98.7%", label: "Mission Success" },
+    { value: "24/7", label: "Live Monitoring" },
+    { value: "1000+", label: "Debris Tracked" },
 ];
 
 const technologyFeatures = [
@@ -156,9 +156,9 @@ export default function Home() {
             </div>
 
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12 w-full max-w-5xl">
-              {stats.map((stat) => (
-                <div key={stat.label} className="rounded-lg border border-primary/20 bg-black/30 p-4 text-center backdrop-blur-sm transition-all duration-300 hover:shadow-xl hover:shadow-primary/30">
-                  <p className="font-headline text-4xl font-bold text-primary">{stat.value}</p>
+              {stats.map((stat, index) => (
+                <div key={stat.label} className="animate-float text-center" style={{ animationDelay: `${index * 0.2}s`, animationDuration: '4s' }}>
+                  <p className={`font-headline text-4xl font-bold ${index === 1 ? 'text-cyan-400' : 'text-primary'}`}>{stat.value}</p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </div>
               ))}
@@ -384,6 +384,7 @@ export default function Home() {
 }
 
     
+
 
 
 
