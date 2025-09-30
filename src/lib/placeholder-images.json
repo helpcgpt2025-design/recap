@@ -7,6 +7,12 @@
       "imageHint": "satellite space"
     },
     {
+      "id": "hero-background-mobile",
+      "description": "A satellite collecting orbital debris with Earth in the background, optimized for mobile.",
+      "imageUrl": "/images/mobilebg.jpg",
+      "imageHint": "satellite earth"
+    },
+    {
       "id": "about-recap",
       "description": "A futuristic spacecraft collecting debris near a planet.",
       "imageUrl": "/images/about-recap.jpg",

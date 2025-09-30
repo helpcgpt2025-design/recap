@@ -10,6 +10,7 @@ import { ArrowRight, Crosshair, Shield, Globe, Zap, Database, Mail, Phone, MapPi
 import { Badge } from "@/components/ui/badge";
 
 const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
+const mobileHeroImage = PlaceHolderImages.find(img => img.id === 'hero-background-mobile');
 const aboutImage = PlaceHolderImages.find(img => img.id === 'about-recap');
 const missionImage = PlaceHolderImages.find(img => img.id === 'mission-earth');
 
@@ -117,13 +118,21 @@ export default function Home() {
     <>
       <section className="relative h-screen min-h-[700px] w-full overflow-hidden">
         
-           {heroImage && <Image
+          {heroImage && <Image
             src={heroImage.imageUrl}
             alt={heroImage.description}
             fill
-            className="object-cover"
+            className="object-cover hidden md:block"
             priority
             data-ai-hint={heroImage.imageHint}
+          />}
+          {mobileHeroImage && <Image
+            src={mobileHeroImage.imageUrl}
+            alt={mobileHeroImage.description}
+            fill
+            className="object-cover md:hidden"
+            priority
+            data-ai-hint={mobileHeroImage.imageHint}
           />}
         
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
@@ -398,3 +407,4 @@ export default function Home() {
 
 
     
+
