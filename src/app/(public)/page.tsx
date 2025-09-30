@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { ArrowRight, Crosshair, Shield, Globe, Zap, Database, Mail, Phone, MapPin, Send, Play } from "lucide-react";
+import { ArrowRight, Crosshair, Shield, Globe, Zap, Database, Mail, Phone, MapPin, Send, Play, CheckCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
@@ -65,6 +65,33 @@ const missionGoals = [
         title: "Future-Ready Infrastructure",
         description: "Build scalable systems that can adapt to growing space activity and emerging debris challenges.",
     },
+]
+
+const timelinePhases = [
+    {
+        phase: 1,
+        title: "Launch & Deployment",
+        description: "CubeSat successfully deployed into LEO orbit at 500km altitude",
+        status: "Completed"
+    },
+    {
+        phase: 2,
+        title: "Debris Detection",
+        description: "Active scanning and tracking of target debris objects",
+        status: "In Progress"
+    },
+    {
+        phase: 3,
+        title: "Capture Operations",
+        description: "Precision maneuvering and debris capture sequence",
+        status: "Planned"
+    },
+    {
+        phase: 4,
+        title: "Recovery",
+        description: "Capsule deployment and controlled atmospheric re-entry",
+        status: "Planned"
+    }
 ]
 
 const contactInfo = [
@@ -243,6 +270,43 @@ export default function Home() {
             </div>
         </div>
       </section>
+
+      <section id="timeline" className="py-12 md:py-24 bg-secondary/20">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Mission Timeline</h2>
+            <p className="mt-4 text-muted-foreground">
+              Track our progress through each critical phase of the RECAP mission
+            </p>
+          </div>
+          <div className="mt-12 max-w-4xl mx-auto space-y-6">
+            {timelinePhases.map((phase) => (
+              <Card key={phase.phase} className="hud-card flex items-center gap-6">
+                  <div className={`flex items-center justify-center h-12 w-12 rounded-full border-2 ${phase.status === 'Completed' ? 'border-primary bg-primary/20 text-primary' : 'border-muted bg-muted/20 text-muted-foreground'}`}>
+                      {phase.status === 'Completed' ? <CheckCircle className="h-6 w-6" /> : <span className="font-headline text-xl">{phase.phase}</span>}
+                  </div>
+                  <div className="flex-1">
+                      <div className="flex justify-between items-center mb-1">
+                        <p className="text-sm font-medium text-muted-foreground">Phase {phase.phase}</p>
+                        <Badge variant={
+                          phase.status === 'Completed' ? 'default' :
+                          phase.status === 'In Progress' ? 'secondary' : 'outline'
+                        }
+                        className={
+                          phase.status === 'In Progress' ? 'bg-orange-500/20 text-orange-400 border-orange-500/50' : ''
+                        }
+                        >
+                          {phase.status}
+                        </Badge>
+                      </div>
+                      <h3 className="font-headline text-xl font-bold">{phase.title}</h3>
+                      <p className="text-muted-foreground">{phase.description}</p>
+                  </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
       
       <section id="contact" className="py-12 md:py-24 border-t border-border/50">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
@@ -320,4 +384,5 @@ export default function Home() {
 }
 
     
+
 

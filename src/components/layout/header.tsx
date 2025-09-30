@@ -10,11 +10,12 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#technology", label: "Technology" },
   { href: "#mission", label: "Mission" },
+  { href: "#timeline", label: "Timeline" },
   { href: "#contact", label: "Contact" },
 ];
 
 export default function Header() {
-  const activeSection = useActiveSection(["about", "technology", "mission", "contact"]);
+  const activeSection = useActiveSection(["about", "technology", "mission", "timeline", "contact"]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-sm">
