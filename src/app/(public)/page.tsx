@@ -14,9 +14,9 @@ const aboutImage = PlaceHolderImages.find(img => img.id === 'about-recap');
 const missionImage = PlaceHolderImages.find(img => img.id === 'mission-earth');
 
 const stats = [
-  { value: "98.7%", label: "Mission Success" },
-  { value: "24/7", label: "Live Monitoring" },
-  { value: "1000+", label: "Debris Tracked" },
+  { value: "100+", label: "Debris Targets" },
+  { value: "500km", label: "Orbital Range" },
+  { value: "24/7", label: "Monitoring" },
 ];
 
 const technologyFeatures = [
@@ -91,11 +91,12 @@ export default function Home() {
       <section className="relative h-screen min-h-[700px] w-full overflow-hidden">
         
            <Image
-            src="/hero-banner.jpg"
+            src="https://picsum.photos/seed/recap-hero/1920/1080"
             alt="A satellite collecting orbital debris with Earth in the background."
             fill
             className="object-cover"
             priority
+            data-ai-hint="satellite space"
           />
         
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
@@ -103,18 +104,24 @@ export default function Home() {
           <div className="relative z-10 flex h-full max-w-3xl flex-col items-start justify-center text-left">
             
             <Badge variant="secondary" className="mb-4 bg-black/30 backdrop-blur-sm border-primary/30">
-              TEAM VAJRA PRESENTS
+              Next-Gen Orbital Debris Collection
             </Badge>
             
-            <h1 className="font-headline text-5xl font-bold tracking-tight text-foreground glow-text sm:text-6xl md:text-7xl lg:text-8xl" style={{ textShadow: '0 0 15px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--primary) / 0.5)' }}>
-              Recoverable Capsule for Orbital Debris Collection
+            <h1 className="font-headline text-5xl font-bold tracking-tight text-foreground glow-text sm:text-6xl md:text-7xl lg:text-8xl">
+                <span className="text-primary">RECAP</span><br/>
+                Recoverable Capsule
             </h1>
-            <p className="mt-4 max-w-3xl text-base text-muted-foreground md:text-lg">
-              Advanced CubeSat mission control platform for real-time debris tracking, telemetry monitoring, and secure mission data management.
+            <p className="font-headline text-3xl font-bold tracking-tight text-foreground/80 sm:text-4xl md:text-5xl">
+                Orbital Debris Collection Mission
             </p>
+
+            <p className="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+              Advanced CubeSat technology designed to capture and recover orbital debris, making space safer for future missions.
+            </p>
+
             <div className="mt-8 flex flex-wrap justify-start gap-4">
               <Button asChild size="lg" className="glowing-btn">
-                <Link href="/dashboard">Access Portal</Link>
+                <Link href="/dashboard">Access Mission Data <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link href="#">Learn More</Link>
@@ -313,3 +320,4 @@ export default function Home() {
 }
 
     
+
