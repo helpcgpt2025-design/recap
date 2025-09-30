@@ -87,9 +87,9 @@ export function AppSidebar() {
                   <span>Logout</span>
                 </Link>
               </SidebarMenuButton>
-            </sidebarMenuItem>
+            </SidebarMenuItem>
           </SidebarMenu>
         </SidebarFooter>
     </Sidebar>
-  )
+  );
 }
